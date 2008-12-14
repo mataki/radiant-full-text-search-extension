@@ -1,0 +1,12 @@
+<% include_stylesheet 'admin/full_text_search/full_text_search' %>
+<h1>FullTextSearch Setting<h1>
+<%= error_messages_for "setting" %>
+<% form_for(@setting, :url => admin_full_text_search_update_path ) do |f| %>
+<p>
+  <%= f.label :node %>
+  <%= f.text_field :node %>
+</p>
+<p>
+  <%= f.submit "submit" %>
+</p>
+<% end %>

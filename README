@@ -1,0 +1,14 @@
+= Full Text Search extension for radiant =
+
+Created by: Akihiro Matsumura - http://d.hatena.ne.jp/mat_aki/
+   Version: 0.1
+   Contact: matsumura.aki@gmail.com
+
+== INSTALLATION ==
+
+#TODO write here
+
+== DEVELOPMENT ROADMAP ==
+* Pagination
+* Tag to create link to full_text_search
+* Installation document

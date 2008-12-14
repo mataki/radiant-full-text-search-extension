@@ -1,0 +1,19 @@
+<h1>Full Text Search</h1>
+<% form_tag full_text_search_path, :method => :get do %>
+<p>
+  <%= text_field_tag :phrase, params[:phrase] %>
+  <%= submit_tag "Search" %>
+</p>
+<% end %>
+<div id="search_header">
+  Results: <%= @search.count %>
+</div>
+<div id="search_result">
+  <% @search.items.each do |item| %>
+  <div class="title"><%= link_to h(item[:title]), item[:uri] %></div>
+  <div class="snippet"><%= highlight(item[:snippet], params[:phrase].split(" ")) %></div>
+  <% end %>
+</div>
+<div class="search_navi">
+
+</div>
