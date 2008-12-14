@@ -4,11 +4,12 @@ class EstSearch
   attr_reader :count
   attr_reader :offset
   attr_reader :per_page
-  attr_reader :error
+  attr_reader :flash
 
   def initialize(phrase, offset, per_page)
+    @flash = {}
     if phrase.blank?
-      @error = "input search phrase"
+      @flash[:notice] = "input search phrase"
       return
     end
     node = get_node
@@ -22,7 +23,7 @@ class EstSearch
       @offset = offset ? offset.to_i : 0
       @per_page = per_page ? per_page.to_i : 10
     else
-      @error = "i cannnot get search result"
+      @flash[:error] = "i cannnot get search result"
     end
   end
 

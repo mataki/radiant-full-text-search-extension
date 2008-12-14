@@ -3,8 +3,8 @@ class FullTextSearchController < ApplicationController
 
   def index
     @search = EstSearch.new(params[:phrase], params[:offset], params[:per_page])
-    if @search.error
-      flash[:error] = @search.error
+    unless @search.flash.blank?
+      @search.flash.each {|key, val| flash.now[key] = val }
     end
   end
 end
