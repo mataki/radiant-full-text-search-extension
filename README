@@ -9,7 +9,10 @@ Created by: Akihiro Matsumura - http://d.hatena.ne.jp/mat_aki/
 #TODO write here
 
 == DEVELOPMENT ROADMAP ==
-* Pagination
 * Tag to create link to full_text_search
 * Installation document
 * Design
+  * CSS Setting
+
+== DONE ==
+* Pagination
