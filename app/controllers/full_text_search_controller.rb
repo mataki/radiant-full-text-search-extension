@@ -3,6 +3,7 @@ class FullTextSearchController < ApplicationController
   skip_before_filter :verify_authenticity_token
   no_login_required
 
+  radiant_layout {|controller| FtsSetting.first.layout }
   def index
     @search = EstSearch.new(params[:phrase], params[:offset], params[:per_page])
     unless @search.flash.blank?
