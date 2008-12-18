@@ -22,4 +22,5 @@ class FullTextSearchExtension < Radiant::Extension
     # admin.tabs.remove "Full Text Search"
   end
 
+  Page.send :include, FullTextSearchTags
 end
