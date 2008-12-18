@@ -11,10 +11,10 @@ This extension demands share_layouts extension.
 #TODO write here
 
 == DEVELOPMENT ROADMAP ==
-* Tag to create link to full_text_search
 * Installation document
 * Design
   * CSS Setting
 
 == DONE ==
 * Pagination
+* Tag to create link to full_text_search
