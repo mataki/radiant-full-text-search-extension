@@ -15,5 +15,11 @@
   <% end %>
 </div>
 <div class="search_navi">
-
+<div class="pagination">
+  <%= link_to 'prev', params.update(:offset => @search.prev_page_offset) if @search.prev %>
+  <% @search.page_range.each do |i| -%>
+  <%= link_to_if (i != @search.current_page), i, params.update(:offset => (i-1)*@search.per_page) %>
+  <% end -%>
+  <%= link_to 'next', params.update(:offset => @search.next_page_offset) if @search.next %>
+</div>
 </div>

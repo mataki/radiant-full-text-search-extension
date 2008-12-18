@@ -31,6 +31,14 @@ class EstSearch
     (offset/per_page) + 1
   end
 
+  def max_page
+    count/per_page + (count/per_page>0 ? 1 : 0)
+  end
+
+  def page_range
+    (1..max_page)
+  end
+
   def start_count
     offset + 1
   end
@@ -40,11 +48,19 @@ class EstSearch
   end
 
   def prev
-    offset > 0 ? "true" : ""
+    offset > 0
   end
 
   def next
-    offset + per_page < count ? "true" : ""
+    offset + per_page < count
+  end
+
+  def prev_page_offset
+    offset - per_page
+  end
+
+  def next_page_offset
+    offset + per_page
   end
 
   def items
