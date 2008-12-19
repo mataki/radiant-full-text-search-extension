@@ -33,7 +33,7 @@ class EstSearch
   end
 
   def max_page
-    count/per_page + (count/per_page>0 ? 1 : 0)
+    count/per_page + (count%per_page > 0 ? 1 : 0)
   end
 
   def page_range
