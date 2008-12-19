@@ -66,7 +66,7 @@ class EstSearch
 
   def items
     return [] if @nres.blank? or count <= 0
-    (offset..(@nres.doc_num < offset + per_page ? @nres.doc_num - 1 : offset + per_page)).map do |i|
+    (offset..(@nres.doc_num <= offset + per_page ? @nres.doc_num - 1 : offset + per_page - 1)).map do |i|
       doc = @nres.get_doc(i)
       { :title => doc.attr("@title"), :uri => doc.uri, :snippet => doc.snippet }
     end

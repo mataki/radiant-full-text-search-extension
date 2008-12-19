@@ -10,7 +10,7 @@
 </div>
 <div id="search_result">
   <% @search.items.each do |item| %>
-  <div class="result_item">
+  <div class="result_item <%= cycle('even', 'odd') %>">
     <div class="title"><%= link_to h(item[:title]), item[:uri] %></div>
     <div class="snippet"><%= highlight(item[:snippet], params[:phrase].split(" ")) %></div>
   </div>
