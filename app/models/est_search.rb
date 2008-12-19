@@ -75,9 +75,7 @@ class EstSearch
   private
   def node_url
     return @node_url if @node_url
-    setting = FtsSetting.first
-    @node_url = setting.node
-    return @node_url
+    return @node_url = FtsSetting.node
   end
 
   def get_node

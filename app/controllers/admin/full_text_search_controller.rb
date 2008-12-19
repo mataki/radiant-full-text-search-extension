@@ -1,10 +1,10 @@
 class Admin::FullTextSearchController < ApplicationController
   def index
-    @setting = FtsSetting.first || FtsSetting.new
+    @setting = FtsSetting.first_or_initialize
   end
 
   def update
-    @setting = FtsSetting.first || FtsSetting.new
+    @setting = FtsSetting.first_or_initialize
     @setting.attributes = params[:fts_setting]
     if @setting.save
       flash[:notice] = "FullTextSearh Setting is updated"
